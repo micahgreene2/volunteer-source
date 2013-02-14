@@ -1,0 +1,35 @@
+﻿@model VolunteerHourLog.Models.VolunteerEvent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>VolunteerEvent</legend>
+
+    <div class="display-label">VolunteerDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VolunteerDate)
+    </div>
+
+    <div class="display-label">ZIPcode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ZIPcode)
+    </div>
+
+    <div class="display-label">Hours</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Hours)
+    </div>
+
+    <div class="display-label">Topic</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Topic)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.VolunteerEventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
