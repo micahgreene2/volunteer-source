@@ -8,7 +8,7 @@ namespace VolunteerHourLog.Models
 {
     public class VolunteerEventContext:DbContext
     {
-       public DbSet<VolunteerEvent> VolunteerEvents { get; set; }
-       public DbSet<VolunteerTopic> VolunteerTopics { get; set; }
+       /*public DbSet<VolunteerEvent> VolunteerEvents { get; set; }
+       public DbSet<VolunteerTopic> VolunteerTopics { get; set; }*/
     }
 }
