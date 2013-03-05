@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volunteer Iowa Site", "Volunteer Iowa Site\Volunteer Iowa Site.csproj", "{2C0939FD-1AF3-424C-BBD3-2ADC328C199C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volunteer Iowa Site.Tests", "Volunteer Iowa Site.Tests\Volunteer Iowa Site.Tests.csproj", "{BDC949B4-F830-4333-AA68-02636AADAA05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0939FD-1AF3-424C-BBD3-2ADC328C199C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0939FD-1AF3-424C-BBD3-2ADC328C199C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0939FD-1AF3-424C-BBD3-2ADC328C199C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0939FD-1AF3-424C-BBD3-2ADC328C199C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDC949B4-F830-4333-AA68-02636AADAA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC949B4-F830-4333-AA68-02636AADAA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC949B4-F830-4333-AA68-02636AADAA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC949B4-F830-4333-AA68-02636AADAA05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
