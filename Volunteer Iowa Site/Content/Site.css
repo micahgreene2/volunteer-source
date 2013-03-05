@@ -1,11 +1,11 @@
 ﻿html {
-    background-color: #e2e2e2;
+    background-color: #595959;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #fff;
+    background-color: #f2f2f2;
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
@@ -99,9 +99,10 @@ h5, h6 {
 }
 
 #body {
-    background-color: #efeeef;
+    background-color: #f2f2f2;
     clear: both;
-    padding-bottom: 35px;
+    /*padding-bottom: 35px;*/
+    padding: 0 20px 35px 20px;
 }
 
     .main-content {
@@ -179,12 +180,15 @@ footer {
 
 /* menu
 ----------------------------------------------------------*/
+.nav-menu-wrap {
+    
+}
 ul#menu {
     font-size: 1.3em;
     font-weight: 600;
     margin: 0 0 5px;
     padding: 0;
-    text-align: right;
+    text-align: left;
 }
 
     ul#menu li {
