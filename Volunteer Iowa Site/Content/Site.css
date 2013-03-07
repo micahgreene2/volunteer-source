@@ -201,10 +201,9 @@ footer {
     border: 1px #efb54a solid;
     font-size: 1.3em;
     font-weight: 600;
-    margin: 13px 0 0;
     padding: 0;
     text-align: left;
-    
+ 
 }
 .main-nav a {
     display: inline-block;
@@ -220,14 +219,6 @@ text-decoration: none;
 -o-transition: background 0.3s ease;
 transition: background 0.3s ease;
 /*box-shadow: 20px 15px 55px 0 rgba(0,0,0,0.3);*/
-/*
-    background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 86%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.65)), color-stop(18%,rgba(0,0,0,0)), color-stop(86%,rgba(0,0,0,0)));
-    background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 86%);
-    background: -o-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 86%);
-    background: -ms-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 86%);
-    background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 86%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );*/
 }
 .main-nav a:hover {
     background-color: #efb54a;
@@ -654,17 +645,31 @@ tr.pager td {
 
         #login a {
             background: none;
-            color: #999;
+            color: #efb54a;
             font-weight: 600;
             margin: 2px;
             padding: 0;
         }
 
         #login a:hover {
-            color: #333;
+            color: #bf9d5e;
         }
 
     /* menu */
+    .main-nav {
+        margin: 0;
+        font-size: .8em;
+        background-color:#f2f2f2;
+        border:none;
+    }
+    .main-nav a {
+        padding: 7px 0 0;
+        background-color: #bf9d5e;
+        border: 1px #efb54a solid;
+    }
+    .main-nav a:hover {
+    }
+    /*
     nav {
         margin-bottom: 5px;
     }
@@ -678,8 +683,7 @@ tr.pager td {
         ul#menu li {
             margin: 0;
             padding: 0;
-        }
-
+        }*/
 
     /* main layout
     ----------------------------------------------------------*/
@@ -781,6 +785,32 @@ tr.pager td {
         footer p {
             margin: 0;
         }
+    header .content-wrapper {
+        padding: 5px 0;
+    }
+}
+/*******************************
+*   Mobile Styles Even Deaper  *
+********************************/
+@media only screen and (max-width: 450px) {
+     .main-nav {
+        margin-bottom: 95px;
+        margin-right: 10px;
+        width: 100%;
+    }
+    .main-nav a {
+        width: 100%;
+    }
+    .main-content {
+        padding-top: 5px;
+    }
+    header .content-wrapper {
+        padding: 5px 0;
+    }
+    #body {
+        width:100%;
+        padding: 5px 5px 5px 5px;
+    }
 }
 
 /*  Fonts   */
