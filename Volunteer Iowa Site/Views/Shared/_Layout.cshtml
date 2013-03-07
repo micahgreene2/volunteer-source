@@ -9,6 +9,7 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
+        <div class="header-top-color"> </div>
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
@@ -25,17 +26,27 @@
                 </div>
             </div>
         </header>
+   
         <div id="body">
-            <div class="nav-menu-wrap">
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                </nav>
-            </div>
-            @RenderSection("featured", required: false)
+
+            <nav class="main-nav">
+            <a class="menu-action-link" href="@Url.Action("Index", "Home")"><span aria-hidden="true" data-icon="&#x21;"></span>Home</a>
+            <a class="menu-action-link" href="@Url.Action("About", "Home")"><span aria-hidden="true" data-icon="&#x22;"></span>About</a>
+            <a class="menu-action-link" href="@Url.Action( "Index","Log")"><span aria-hidden="true" data-icon="&#x23;"></span>Log</a>
+            </nav>
+            <!--
+            <nav class="main-nav">
+                <ul id="menu">
+                    <li class="menu-link"><a class="menu-action-link" href="@Url.Action("Index", "Home")"><span aria-hidden="true" data-icon="&#x21;"></span>Home</a></li>
+                    <li class="menu-link"><a class="menu-action-link" href="@Url.Action("About", "Home")"><span aria-hidden="true" data-icon="&#x22;"></span>About</a></li>
+                    <li class="menu-link"><a class="menu-action-link" href="@Url.Action("Log", "Home")"><span aria-hidden="true" data-icon="&#x23;"></span>Log</a></li>
+                    <!--<li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "test" })</li>
+                </ul>
+            </nav>
+            -->
+           <!-- @RenderSection("featured", required: false) -->
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>

@@ -18,15 +18,17 @@ namespace Volunteer_Iowa_Site
             //    clientId: "",
             //    clientSecret: "");
 
-            //OAuthWebSecurity.RegisterTwitterClient(
-            //    consumerKey: "",
-            //    consumerSecret: "");
-
-            //OAuthWebSecurity.RegisterFacebookClient(
-            //    appId: "",
-            //    appSecret: "");
-
-            //OAuthWebSecurity.RegisterGoogleClient();
+            /*
+            OAuthWebSecurity.RegisterTwitterClient(
+                consumerKey: "",
+                consumerSecret: "");
+            
+            OAuthWebSecurity.RegisterFacebookClient(
+                appId: "",
+                appSecret: "");
+            
+            OAuthWebSecurity.RegisterGoogleClient();
+            */
         }
     }
 }
