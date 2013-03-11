@@ -14,10 +14,9 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Index()
         {
-
-
             return View();
         }
 
     }
+    /* my own text */
 }
