@@ -10,7 +10,7 @@ namespace Volunteer_Iowa_Site.Controllers
     {
         //
         // GET: /Log/
-        //change by anthony
+        //change by anthony version 2
 
         public ActionResult Index()
         {
