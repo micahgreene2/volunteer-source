@@ -782,8 +782,15 @@ tr.pager td {
         padding: 10px 0;
     }
 
-        footer p {
+       /*footer p {
             margin: 0;
+        }*/ 
+        footer .content-wrapper {
+            text-align: center;
+        }
+        footer a {
+            color: #efb54a;
+            text-decoration: none;
         }
     header .content-wrapper {
         padding: 5px 0;
