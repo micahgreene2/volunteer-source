@@ -15,4 +15,9 @@
 *.exe
 *.out
 *.app
+
+# Local Builds
 *.cache
+*.pdb
+*.mdf
+*.ldf
