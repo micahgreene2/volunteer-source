@@ -1,0 +1,43 @@
+﻿@model Volunteer_Iowa_Site.Models.Log
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Log</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.userID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.userID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.orgID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.orgID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.eventID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.eventID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.hoursLogged)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hoursLogged)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.logID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

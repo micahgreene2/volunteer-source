@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace Volunteer_Iowa_Site.Models
 {
+    public class LogDataContext : DbContext
+    {
+        public DbSet<Log> Logs { get; set; }
+    }
     public class Log
     {
         [Required]
@@ -30,17 +35,4 @@ namespace Volunteer_Iowa_Site.Models
         [Display(Name="Hours Logged")]
         public int hoursLogged { get; set; }
     }
-    public class Event
-    {
-        public int eventID { get; set; }
-        public string Name { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
-        public int addressID { get; set; }
-    }
-    public class Org
-    {
-
-    }
-
 }

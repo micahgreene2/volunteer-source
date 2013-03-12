@@ -9,33 +9,33 @@ using Volunteer_Iowa_Site.Models;
 
 namespace Volunteer_Iowa_Site.Controllers
 {
-    public class LogController : Controller
+    public class EventController : Controller
     {
-        private LogDataContext db = new LogDataContext();
+        private EventDataContext db = new EventDataContext();
 
         //
-        // GET: /Log/
+        // GET: /Event/
 
         public ActionResult Index()
         {
-            return View(db.Logs.ToList());
+            return View(db.Events.ToList());
         }
 
         //
-        // GET: /Log/Details/5
+        // GET: /Event/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Log log = db.Logs.Find(id);
-            if (log == null)
+            Event ev = db.Events.Find(id);
+            if (ev == null)
             {
                 return HttpNotFound();
             }
-            return View(log);
+            return View(ev);
         }
 
         //
-        // GET: /Log/Create
+        // GET: /Event/Create
 
         public ActionResult Create()
         {
@@ -43,70 +43,70 @@ namespace Volunteer_Iowa_Site.Controllers
         }
 
         //
-        // POST: /Log/Create
+        // POST: /Event/Create
 
         [HttpPost]
-        public ActionResult Create(Log log)
+        public ActionResult Create(Event ev)
         {
             if (ModelState.IsValid)
             {
-                db.Logs.Add(log);
+                db.Events.Add(ev);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(log);
+            return View(ev);
         }
 
         //
-        // GET: /Log/Edit/5
+        // GET: /Event/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Log log = db.Logs.Find(id);
-            if (log == null)
+            Event ev = db.Events.Find(id);
+            if (ev == null)
             {
                 return HttpNotFound();
             }
-            return View(log);
+            return View(ev);
         }
 
         //
-        // POST: /Log/Edit/5
+        // POST: /Event/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Log log)
+        public ActionResult Edit(Event ev)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(log).State = EntityState.Modified;
+                db.Entry(ev).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(log);
+            return View(ev);
         }
 
         //
-        // GET: /Log/Delete/5
+        // GET: /Event/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Log log = db.Logs.Find(id);
-            if (log == null)
+            Event ev = db.Events.Find(id);
+            if (ev == null)
             {
                 return HttpNotFound();
             }
-            return View(log);
+            return View(ev);
         }
 
         //
-        // POST: /Log/Delete/5
+        // POST: /Event/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Log log = db.Logs.Find(id);
-            db.Logs.Remove(log);
+            Event ev = db.Events.Find(id);
+            db.Events.Remove(ev);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
