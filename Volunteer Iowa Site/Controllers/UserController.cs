@@ -9,38 +9,33 @@ using Volunteer_Iowa_Site.Models;
 
 namespace Volunteer_Iowa_Site.Controllers
 {
-    [Authorize]
-    public class LogController : Controller
+    public class UserController : Controller
     {
-        private LogDataContext db = new LogDataContext();
+        private UsersContext db = new UsersContext();
 
         //
-        // GET: /Log/
+        // GET: /User/
 
         public ActionResult Index()
         {
-            ViewData["userName"] = User.Identity.Name;
-            ViewData["something"] = "something";
-            
-            
-            return View(db.Logs.ToList());
+            return View(db.UserProfiles.ToList());
         }
 
         //
-        // GET: /Log/Details/5
+        // GET: /User/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            Log log = db.Logs.Find(id);
-            if (log == null)
+            UserProfile userprofile = db.UserProfiles.Find(id);
+            if (userprofile == null)
             {
                 return HttpNotFound();
             }
-            return View(log);
+            return View(userprofile);
         }
 
         //
-        // GET: /Log/Create
+        // GET: /User/Create
 
         public ActionResult Create()
         {
@@ -48,70 +43,70 @@ namespace Volunteer_Iowa_Site.Controllers
         }
 
         //
-        // POST: /Log/Create
+        // POST: /User/Create
 
         [HttpPost]
-        public ActionResult Create(Log log)
+        public ActionResult Create(UserProfile userprofile)
         {
             if (ModelState.IsValid)
             {
-                db.Logs.Add(log);
+                db.UserProfiles.Add(userprofile);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(log);
+            return View(userprofile);
         }
 
         //
-        // GET: /Log/Edit/5
+        // GET: /User/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Log log = db.Logs.Find(id);
-            if (log == null)
+            UserProfile userprofile = db.UserProfiles.Find(id);
+            if (userprofile == null)
             {
                 return HttpNotFound();
             }
-            return View(log);
+            return View(userprofile);
         }
 
         //
-        // POST: /Log/Edit/5
+        // POST: /User/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Log log)
+        public ActionResult Edit(UserProfile userprofile)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(log).State = EntityState.Modified;
+                db.Entry(userprofile).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(log);
+            return View(userprofile);
         }
 
         //
-        // GET: /Log/Delete/5
+        // GET: /User/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Log log = db.Logs.Find(id);
-            if (log == null)
+            UserProfile userprofile = db.UserProfiles.Find(id);
+            if (userprofile == null)
             {
                 return HttpNotFound();
             }
-            return View(log);
+            return View(userprofile);
         }
 
         //
-        // POST: /Log/Delete/5
+        // POST: /User/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Log log = db.Logs.Find(id);
-            db.Logs.Remove(log);
+            UserProfile userprofile = db.UserProfiles.Find(id);
+            db.UserProfiles.Remove(userprofile);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -121,6 +116,5 @@ namespace Volunteer_Iowa_Site.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-        
     }
 }

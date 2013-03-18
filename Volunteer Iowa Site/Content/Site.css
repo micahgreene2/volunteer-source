@@ -109,7 +109,7 @@ position: absolute;
 
 #body {
     background-color: #f2f2f2;
-
+    max-width:980px;
     clear: both;
     /*padding-bottom: 35px;*/
     padding: 20px 20px 35px 20px;
@@ -119,9 +119,10 @@ position: absolute;
 }
 
     .main-content {
-        /*background: url("../Images/accent.png") no-repeat;*/
+        /*background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
-        padding-top: 30px;
+        padding-top: 30px;*/
+        padding: 5px 10px 10px 10px;
     }
 
     .featured + .main-content {
@@ -137,7 +138,15 @@ footer {
     /*background-color: #e2e2e2;*/
     font-size: .8em;
     height: 100px;
+    color:#f2f2f2;
 }
+    footer  .content-wrapper {
+        text-align: center;
+        padding:0;
+    }
+    footer a:link {
+        color:#efb54a;
+    }
 
 
 /* site title
@@ -382,7 +391,7 @@ aside {
     }
 
 #socialLoginForm {
-    margin-left: 40px;
+    margin-left: 2%;
     float: left;
     width: 40%;
 }
@@ -620,19 +629,22 @@ tr.pager td {
 
     /* logo */
     header .site-title {
-        margin: 10px;
+        /*margin: 10px;*/
         text-align: center;
     }
 
     /* login */
     #login {
         font-size: .85em;
-        margin: 0 0 12px;
+        /*margin: 0 0 12px;*/
+        margin:0;
+        padding:0;
         text-align: center;
     }
 
         #login ul {
-            margin: 5px 0;
+            /*margin: 5px 0;*/
+            margin:0;
             padding: 0;
         }
 
@@ -647,7 +659,7 @@ tr.pager td {
             background: none;
             color: #efb54a;
             font-weight: 600;
-            margin: 2px;
+            margin: 0 4px;
             padding: 0;
         }
 
@@ -785,7 +797,7 @@ tr.pager td {
        /*footer p {
             margin: 0;
         }*/ 
-        footer .content-wrapper {
+        footer  .content-wrapper {
             text-align: center;
         }
         footer a {
@@ -793,7 +805,8 @@ tr.pager td {
             text-decoration: none;
         }
     header .content-wrapper {
-        padding: 5px 0;
+        /*padding: 5px 0;*/
+        padding: 0;
     }
 }
 /*******************************
@@ -817,6 +830,7 @@ tr.pager td {
     #body {
         width:100%;
         padding: 5px 5px 5px 5px;
+        
     }
 }
 
@@ -831,7 +845,6 @@ tr.pager td {
 	font-weight: normal;
 	font-style: normal;
 }
-
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
 	font-family: 'icomoon';
@@ -848,9 +861,9 @@ tr.pager td {
 /*
 Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
-[class*="icon-"]:before {
+[class*="icon-"] {
 */
-.icon-home:before, .icon-cog:before, .icon-menu:before {
+.icon-whatsyour50-BUG-full-edit, .icon-home, .icon-chrome, .icon-firefox, .icon-IE, .icon-opera, .icon-safari, .icon-facebook, .icon-twitter, .icon-newspaper, .icon-quill, .icon-cogs {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -860,12 +873,39 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-home:before {
+.icon-whatsyour50-BUG-full-edit:before {
 	content: "\21";
 }
-.icon-cog:before {
+.icon-home:before {
 	content: "\22";
 }
-.icon-menu:before {
+.icon-chrome:before {
 	content: "\23";
+}
+.icon-firefox:before {
+	content: "\24";
+}
+.icon-IE:before {
+	content: "\25";
+}
+.icon-opera:before {
+	content: "\26";
+}
+.icon-safari:before {
+	content: "\27";
+}
+.icon-facebook:before {
+	content: "\28";
+}
+.icon-twitter:before {
+	content: "\29";
+}
+.icon-newspaper:before {
+	content: "\2a";
+}
+.icon-quill:before {
+	content: "\2b";
+}
+.icon-cogs:before {
+	content: "\2c";
 }

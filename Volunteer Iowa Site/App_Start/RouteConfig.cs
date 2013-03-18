@@ -18,6 +18,18 @@ namespace Volunteer_Iowa_Site
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Logs",
+                url: "{controller}/{action}/{userID}",
+                defaults: new { controller = "Log", action = "Index", userID = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Search",
+                url: "search/{*query}",
+                defaults: new { controller = "Log", action = "Search" }
+            );
         }
     }
 }

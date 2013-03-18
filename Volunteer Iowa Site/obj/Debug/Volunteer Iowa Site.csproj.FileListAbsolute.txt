@@ -95,4 +95,3 @@ C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\bin\DotNetO
 C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Debug\Volunteer Iowa Site.dll
 C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Debug\Volunteer Iowa Site.pdb
-C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Debug\Volunteer Iowa Site.csprojResolveAssemblyReference.cache
