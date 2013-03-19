@@ -10,16 +10,16 @@ namespace Volunteer_Iowa_Site.Models
 {
     public class EventDataContext : DbContext
     {
+        /*
         public EventDataContext() 
             : base("DefaultConnection")
         {
-        }
+        }*/
         public DbSet<Event> Events { get; set; }
     }
     [Table("Event")]
     public class Event
     {
-        [Required]
         [Key]
         [DataType(DataType.Text)]
         [Display(Name = "Event ID")]
@@ -37,8 +37,7 @@ namespace Volunteer_Iowa_Site.Models
         [Display(Name = "End Date")]
         public DateTime endDate { get; set; }
 
-        [Required]
-        [DataType(DataType.PostalCode)]
+        [DataType(DataType.Text)]
         [Display(Name = "Address Id")]
         public int addressID { get; set; }
     }

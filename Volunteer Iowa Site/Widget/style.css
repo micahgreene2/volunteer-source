@@ -1,1 +1,12 @@
-﻿
+﻿.my50-widget-container {
+    background-color:grey;height:550px;width:300px;
+}
+.my50-top {
+background-color:red;height:30%;
+}
+.my50-content {
+    background-color:white;height:60%
+}
+.my50-links {
+    background-color:blue;height:10%;
+}

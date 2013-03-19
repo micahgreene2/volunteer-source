@@ -10,10 +10,11 @@ namespace Volunteer_Iowa_Site.Models
 {
     public class LogDataContext : DbContext
     {
+        /*
         public LogDataContext()
             : base("DefaultConnection")
         {
-        }
+        }*/
         public DbSet<Log> Logs { get; set; }
     }
     [Table("Log")]

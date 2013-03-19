@@ -17,7 +17,8 @@
 *.app
 
 # Local Builds
-*.cache
-*.pdb
-*.mdf
-*.ldf
+*.cache*
+*.pdb*
+*.mdf*
+*.ldf*
+*App_Data*
