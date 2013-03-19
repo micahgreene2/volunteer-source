@@ -16,7 +16,7 @@ namespace Volunteer_Iowa_Site.Models
         {
         }*/
         public DbSet<Log> Logs { get; set; }
-    }
+    }/*
     [Table("Log")]
     public class Log
     {
@@ -41,5 +41,5 @@ namespace Volunteer_Iowa_Site.Models
         [DataType(DataType.Duration)]
         [Display(Name="Hours Logged")]
         public int hoursLogged { get; set; }
-    }
+    }*/
 }

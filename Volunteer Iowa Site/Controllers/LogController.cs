@@ -13,7 +13,7 @@ namespace Volunteer_Iowa_Site.Controllers
     public class LogController : Controller
     {
         private LogDataContext db = new LogDataContext();
-
+        private EventDataContext edb = new EventDataContext();
         //
         // GET: /Log/
 
@@ -21,8 +21,9 @@ namespace Volunteer_Iowa_Site.Controllers
         {
             ViewData["userName"] = User.Identity.Name;
             ViewData["something"] = "something";
-            
-            
+
+            ViewData["list"] = edb.Events.ToList();
+
             return View(db.Logs.ToList());
         }
 
@@ -44,7 +45,7 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            return View(  );
         }
 
         //
