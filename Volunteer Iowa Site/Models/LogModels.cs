@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -40,5 +41,5 @@ namespace Volunteer_Iowa_Site.Models
         [DataType(DataType.Duration)]
         [Display(Name="Hours Logged")]
         public int hoursLogged { get; set; }
-    }
+    } 
 }

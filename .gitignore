@@ -16,7 +16,6 @@
 *.out
 *.app
 
-# Local Builds
 *.cache
 *.pdb
 *.mdf

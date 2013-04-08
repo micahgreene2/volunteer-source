@@ -19,8 +19,9 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Index()
         {
+            
             ViewData["userName"] = User.Identity.Name;
-            ViewData["something"] = "something";
+           // ViewData["events"] = dbc.Events.ToArray();
             
             
             return View(db.Logs.ToList());
@@ -121,6 +122,18 @@ namespace Volunteer_Iowa_Site.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-        
+        [HttpPost]
+        public ActionResult SearchIndex(FormCollection fc, string searchString)
+        {
+
+            var log = from m in db.Logs
+                      select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                log = log.Where( s => s.userID.Equals(searchString));
+            }
+            return View(log);
+        }
     }
+
 }
