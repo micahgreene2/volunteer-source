@@ -122,15 +122,15 @@ namespace Volunteer_Iowa_Site.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-        [HttpPost]
-        public ActionResult SearchIndex(FormCollection fc, string searchString)
+        public ActionResult SearchIndex( string searchString)
         {
+            EventDataContext dbc = new EventDataContext();
 
-            var log = from m in db.Logs
-                      select m;
+            var log = from Name in dbc.Events
+                      select Name;
             if (!String.IsNullOrEmpty(searchString))
             {
-                log = log.Where( s => s.userID.Equals(searchString));
+                log = log.Where( s => s.Name.Contains(searchString));
             }
             return View(log);
         }

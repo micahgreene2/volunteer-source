@@ -26,12 +26,12 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Event ev = db.Events.Find(id);
-            if (ev == null)
+            Event events = db.Events.Find(id);
+            if (events == null)
             {
                 return HttpNotFound();
             }
-            return View(ev);
+            return View(events);
         }
 
         //
@@ -46,16 +46,16 @@ namespace Volunteer_Iowa_Site.Controllers
         // POST: /Event/Create
 
         [HttpPost]
-        public ActionResult Create(Event ev)
+        public ActionResult Create(Event events)
         {
             if (ModelState.IsValid)
             {
-                db.Events.Add(ev);
+                db.Events.Add(events);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(ev);
+            return View(events);
         }
 
         //
@@ -63,27 +63,27 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Event ev = db.Events.Find(id);
-            if (ev == null)
+            Event events = db.Events.Find(id);
+            if (events == null)
             {
                 return HttpNotFound();
             }
-            return View(ev);
+            return View(events);
         }
 
         //
         // POST: /Event/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Event ev)
+        public ActionResult Edit(Event events)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ev).State = EntityState.Modified;
+                db.Entry(events).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(ev);
+            return View(events);
         }
 
         //
@@ -91,12 +91,12 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Event ev = db.Events.Find(id);
-            if (ev == null)
+            Event events = db.Events.Find(id);
+            if (events == null)
             {
                 return HttpNotFound();
             }
-            return View(ev);
+            return View(events);
         }
 
         //
@@ -105,8 +105,8 @@ namespace Volunteer_Iowa_Site.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Event ev = db.Events.Find(id);
-            db.Events.Remove(ev);
+            Event events = db.Events.Find(id);
+            db.Events.Remove(events);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

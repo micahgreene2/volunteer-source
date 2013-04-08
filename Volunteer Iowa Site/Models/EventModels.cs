@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,14 @@ namespace Volunteer_Iowa_Site.Models
         {
         }
         public DbSet<Event> Events { get; set; }
+        public DbSet<AddressModel> Address { get; set; }
+        public DbSet<CityModel> Cities { get; set; }
+        public DbSet<CountyModel> Counties { get; set; }
+        public DbSet<OrgModel> Orgs { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
     }
     [Table("Event")]
     public class Event
