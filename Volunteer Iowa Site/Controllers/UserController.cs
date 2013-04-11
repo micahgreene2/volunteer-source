@@ -11,6 +11,7 @@ namespace Volunteer_Iowa_Site.Controllers
 {
     public class UserController : Controller
     {
+        //private LogEntitiesContainer db = new LogEntitiesContainer();
         private UsersContext db = new UsersContext();
 
         //

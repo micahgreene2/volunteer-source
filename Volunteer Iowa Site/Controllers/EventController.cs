@@ -11,14 +11,15 @@ namespace Volunteer_Iowa_Site.Controllers
 {
     public class EventController : Controller
     {
-        private EventDataContext db = new EventDataContext();
+        private LogEntitiesContainer db = new LogEntitiesContainer();
 
         //
         // GET: /Event/
 
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            var eventss = db.Events.Include(e => e.Address);
+            return View(eventss.ToList());
         }
 
         //
@@ -39,6 +40,7 @@ namespace Volunteer_Iowa_Site.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.addressID = new SelectList(db.Addresses, "Id", "lineOne");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace Volunteer_Iowa_Site.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.addressID = new SelectList(db.Addresses, "Id", "lineOne", events.addressID);
             return View(events);
         }
 
@@ -68,6 +71,7 @@ namespace Volunteer_Iowa_Site.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.addressID = new SelectList(db.Addresses, "Id", "lineOne", events.addressID);
             return View(events);
         }
 
@@ -83,6 +87,7 @@ namespace Volunteer_Iowa_Site.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.addressID = new SelectList(db.Addresses, "Id", "lineOne", events.addressID);
             return View(events);
         }
 

@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -175,10 +177,44 @@
     <Compile Include="Migrations\201303182029194_InitialCreate.Designer.cs">
       <DependentUpon>201303182029194_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\EventModels.cs" />
-    <Compile Include="Models\LogModels.cs" />
+    <Compile Include="Models\Address.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\county.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Event.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MetaDataTypes.cs" />
+    <Compile Include="Models\Organization.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Widget\WidgetController.cs" />
   </ItemGroup>
@@ -241,8 +277,26 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Models\LogEntities.edmx.sql" />
     <Content Include="Widget\script.js" />
     <Content Include="Widget\style.css" />
+    <EntityDeploy Include="Models\LogEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LogEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LogEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+      <LastGenOutput>LogEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LogEntities.edmx.diagram">
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\LogEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+      <LastGenOutput>LogEntities.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -327,6 +381,9 @@
     <EmbeddedResource Include="Migrations\201303182029194_InitialCreate.resx">
       <DependentUpon>201303182029194_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

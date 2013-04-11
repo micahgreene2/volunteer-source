@@ -13,11 +13,11 @@
         <legend>Event</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.eventName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
+            @Html.EditorFor(model => model.eventName)
+            @Html.ValidationMessageFor(model => model.eventName)
         </div>
 
         <div class="editor-label">
@@ -37,10 +37,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.addressID)
+            @Html.LabelFor(model => model.addressID, "Address")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.addressID)
+            @Html.DropDownList("addressID", String.Empty)
             @Html.ValidationMessageFor(model => model.addressID)
         </div>
 

@@ -8,18 +8,18 @@ using System.Web.Security;
 
 namespace Volunteer_Iowa_Site.Models
 {
-    public class UsersContext : DbContext
+     public class UsersContext : DbContext
     {
-        public UsersContext()
+       public UsersContext()
             : base("DefaultConnection")
         {
         }
 
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
-
+   
     [Table("UserProfile")]
-    public class UserProfile
+    public partial class UserProfile
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -27,7 +27,7 @@ namespace Volunteer_Iowa_Site.Models
         public string UserName { get; set; }
     }
 
-    public class RegisterExternalLoginModel
+    public partial class RegisterExternalLoginModel
     {
         [Required]
         [Display(Name = "User name")]
@@ -36,7 +36,7 @@ namespace Volunteer_Iowa_Site.Models
         public string ExternalLoginData { get; set; }
     }
 
-    public class LocalPasswordModel
+    public partial class LocalPasswordModel
     {
         [Required]
         [DataType(DataType.Password)]
@@ -55,7 +55,7 @@ namespace Volunteer_Iowa_Site.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class LoginModel
+    public partial class LoginModel
     {
         [Required]
         [Display(Name = "User name")]
@@ -70,7 +70,7 @@ namespace Volunteer_Iowa_Site.Models
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterModel
+    public partial class RegisterModel
     {
         [Required]
         [Display(Name = "User name")]
@@ -88,10 +88,10 @@ namespace Volunteer_Iowa_Site.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class ExternalLogin
+    public partial class ExternalLogin
     {
         public string Provider { get; set; }
         public string ProviderDisplayName { get; set; }
         public string ProviderUserId { get; set; }
-    }
+    } 
 }

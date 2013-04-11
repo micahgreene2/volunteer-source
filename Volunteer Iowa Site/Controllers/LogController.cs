@@ -12,8 +12,9 @@ namespace Volunteer_Iowa_Site.Controllers
     [Authorize]
     public class LogController : Controller
     {
-        private LogDataContext db = new LogDataContext();
-
+        
+        private LogEntitiesContainer db = new LogEntitiesContainer();
+     // private Log db = new Log();
         //
         // GET: /Log/
 
@@ -22,7 +23,6 @@ namespace Volunteer_Iowa_Site.Controllers
             
             ViewData["userName"] = User.Identity.Name;
            // ViewData["events"] = dbc.Events.ToArray();
-            
             
             return View(db.Logs.ToList());
         }
@@ -124,15 +124,17 @@ namespace Volunteer_Iowa_Site.Controllers
         }
         public ActionResult SearchIndex( string searchString)
         {
-            EventDataContext dbc = new EventDataContext();
-
+           // EventDataContext dbc = new EventDataContext();
+               //     LogEntitiesContainer dbc = new LogEntitiesContainer();
+            /*
             var log = from Name in dbc.Events
                       select Name;
             if (!String.IsNullOrEmpty(searchString))
             {
-                log = log.Where( s => s.Name.Contains(searchString));
+                log = Logs.Where( s => s.Name.Contains(searchString));
             }
-            return View(log);
+            return View(log);*/
+            return View();
         }
     }
 

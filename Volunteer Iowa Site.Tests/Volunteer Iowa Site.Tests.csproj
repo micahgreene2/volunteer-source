@@ -40,6 +40,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
@@ -93,14 +96,67 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="county.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Log.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogEntities.Context.cs">
+      <DependentUpon>LogEntities.Context.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LogEntities.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LogEntities.Designer.cs">
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Organization.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Users.cs">
+      <DependentUpon>LogEntities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="LogEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LogEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="LogEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+      <LastGenOutput>LogEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LogEntities.edmx.diagram">
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="LogEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LogEntities.edmx</DependentUpon>
+      <LastGenOutput>LogEntities.cs</LastGenOutput>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

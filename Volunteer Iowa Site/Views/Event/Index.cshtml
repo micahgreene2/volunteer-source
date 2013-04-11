@@ -12,7 +12,7 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.eventName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.startDate)
@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.endDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.addressID)
+            @Html.DisplayNameFor(model => model.Address.lineOne)
         </th>
         <th></th>
     </tr>
@@ -29,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.eventName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.startDate)
@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.endDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.addressID)
+            @Html.DisplayFor(modelItem => item.Address.lineOne)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.eventID }) |

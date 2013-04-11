@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="LogEntities" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="LogEntitiesContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Logs" EntityType="LogEntities.Log" />
+    <EntitySet Name="Users" EntityType="LogEntities.Users" />
+    <EntitySet Name="Organizations" EntityType="LogEntities.Organization" />
+    <EntitySet Name="Events" EntityType="LogEntities.Event" />
+    <EntitySet Name="Addresses" EntityType="LogEntities.Address" />
+    <EntitySet Name="Cities" EntityType="LogEntities.City" />
+    <EntitySet Name="counties" EntityType="LogEntities.county" />
+    <AssociationSet Name="LogUserProfile" Association="LogEntities.LogUserProfile">
+      <End Role="Log" EntitySet="Logs" />
+      <End Role="UserProfile" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="LogOrganization" Association="LogEntities.LogOrganization">
+      <End Role="Log" EntitySet="Logs" />
+      <End Role="Organization" EntitySet="Organizations" />
+    </AssociationSet>
+    <AssociationSet Name="LogEvent" Association="LogEntities.LogEvent">
+      <End Role="Log" EntitySet="Logs" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="AddressEvent" Association="LogEntities.AddressEvent">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="AddressCity" Association="LogEntities.AddressCity">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="Citycounty" Association="LogEntities.Citycounty">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="county" EntitySet="counties" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="logID" />
+    </Key>
+    <Property Type="Int32" Name="logID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="hoursLogged" Nullable="false" />
+    <NavigationProperty Name="UserProfile" Relationship="LogEntities.LogUserProfile" FromRole="Log" ToRole="UserProfile" />
+    <Property Type="Int32" Name="userId" Nullable="false" />
+    <NavigationProperty Name="Organization" Relationship="LogEntities.LogOrganization" FromRole="Log" ToRole="Organization" />
+    <Property Type="Int32" Name="orgID" Nullable="false" />
+    <NavigationProperty Name="Event" Relationship="LogEntities.LogEvent" FromRole="Log" ToRole="Event" />
+    <Property Type="Int32" Name="eventID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="email" Nullable="false" />
+    <Property Type="String" Name="firstName" Nullable="false" />
+    <Property Type="String" Name="lastName" Nullable="false" />
+    <Property Type="Int32" Name="addressId" Nullable="false" />
+    <NavigationProperty Name="Logs" Relationship="LogEntities.LogUserProfile" FromRole="UserProfile" ToRole="Log" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="OrgID" />
+    </Key>
+    <Property Type="Int32" Name="OrgID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="OrgName" Nullable="false" />
+    <NavigationProperty Name="Logs" Relationship="LogEntities.LogOrganization" FromRole="Organization" ToRole="Log" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="eventID" />
+    </Key>
+    <Property Type="Int32" Name="eventID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="eventName" Nullable="false" />
+    <Property Type="DateTime" Name="startDate" Nullable="false" />
+    <Property Type="DateTime" Name="endDate" Nullable="false" />
+    <NavigationProperty Name="Logs" Relationship="LogEntities.LogEvent" FromRole="Event" ToRole="Log" />
+    <NavigationProperty Name="Address" Relationship="LogEntities.AddressEvent" FromRole="Event" ToRole="Address" />
+    <Property Type="Int32" Name="addressID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="lineOne" Nullable="false" />
+    <Property Type="String" Name="lineTwo" Nullable="false" />
+    <Property Type="String" Name="zip" Nullable="false" />
+    <NavigationProperty Name="Events" Relationship="LogEntities.AddressEvent" FromRole="Address" ToRole="Event" />
+    <NavigationProperty Name="City" Relationship="LogEntities.AddressCity" FromRole="Address" ToRole="City" />
+    <Property Type="Int32" Name="cityID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" />
+    <NavigationProperty Name="Addresses" Relationship="LogEntities.AddressCity" FromRole="City" ToRole="Address" />
+    <NavigationProperty Name="county" Relationship="LogEntities.Citycounty" FromRole="City" ToRole="county" />
+    <Property Type="Int32" Name="countyID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="county">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="name" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="LogEntities.Citycounty" FromRole="county" ToRole="City" />
+  </EntityType>
+  <Association Name="LogUserProfile">
+    <End Type="LogEntities.Log" Role="Log" Multiplicity="*" />
+    <End Type="LogEntities.Users" Role="UserProfile" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LogOrganization">
+    <End Type="LogEntities.Log" Role="Log" Multiplicity="*" />
+    <End Type="LogEntities.Organization" Role="Organization" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="OrgID" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="orgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LogEvent">
+    <End Type="LogEntities.Log" Role="Log" Multiplicity="*" />
+    <End Type="LogEntities.Event" Role="Event" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="eventID" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="eventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AddressEvent">
+    <End Type="LogEntities.Address" Role="Address" Multiplicity="1" />
+    <End Type="LogEntities.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="addressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AddressCity">
+    <End Type="LogEntities.Address" Role="Address" Multiplicity="*" />
+    <End Type="LogEntities.City" Role="City" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="cityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Citycounty">
+    <End Type="LogEntities.City" Role="City" Multiplicity="*" />
+    <End Type="LogEntities.county" Role="county" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="county">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="countyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

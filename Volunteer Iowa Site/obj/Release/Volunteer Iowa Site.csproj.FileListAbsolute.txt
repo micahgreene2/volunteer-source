@@ -1,0 +1,4 @@
+C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Release\Volunteer Iowa Site.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Release\Volunteer_Iowa_Site.Migrations.InitialCreate.resources
+C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Release\Volunteer Iowa Site.csproj.GenerateResource.Cache
+C:\Users\Kevin\Documents\GitHub\volunteer-source\Volunteer Iowa Site\obj\Release\Volunteer Iowa Site.dll

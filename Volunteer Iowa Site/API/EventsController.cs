@@ -14,8 +14,8 @@ namespace Volunteer_Iowa_Site.API
 {
     public class EventsController : ApiController
     {
-        private EventDataContext db = new EventDataContext();
-
+        //private EventDataContext db = new EventDataContext();
+        private LogEntitiesContainer db = new LogEntitiesContainer();
         public EventsController()
         {
             db.Configuration.ProxyCreationEnabled = false;
